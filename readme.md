@@ -1,5 +1,7 @@
 <a href="https://github.com/baidu-ife/ife/blob/master/2015_summer/task/ria_qihang_01.md">bd-ife summer ria_启航班</a>
 
+<a href="http://sally127.github.io/ifesummer">在线demo</a>
+
 ---
 # RIA启航班任务一：个人知识管理工具
 
