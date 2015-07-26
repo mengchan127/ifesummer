@@ -1,0 +1,426 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #eee;
+	font-family: Verdana,Helvetica,Arial,sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: "微软雅黑";
+	font-weight: normal;
+}
+input,a,textarea {
+	outline: none;
+}
+/* flex
+ * 7.19
+ * -----------------*/
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+@media screen and (max-width: 780px) {
+	.container {
+		width: 780px;
+	}	
+}
+@media screen and (max-height: 620px) {
+	.container {
+		height: 620px;
+	}
+}
+.category-list {
+	width: 220px;
+	background: #191818;
+	margin-right: 10px;
+	flex-grow: 0;
+	color: #6c6865;
+	font-family: "微软雅黑";
+	position: relative;
+}
+.note-list {
+	width: 360px;
+	background: #fff;
+	margin-right: 10px;
+	flex-grow: 0;
+}
+.content-area {
+	width: 550px;
+	background: #fff;
+	flex-grow: 1;
+	font-family: Verdana,Helvetica,Arial,sans-serif;
+}
+/* category-list
+ * 7.19
+ *-------------------*/
+.category-list h1 {
+	font-size: 2.0em;
+	line-height: 200px;
+	text-align: center;
+	letter-spacing: 3px;
+}
+.category-list ul {
+	padding: 0;
+}
+.category-list li {
+	line-height: 40px;
+	padding-left: 30px;
+	cursor: pointer;
+	list-style: none;
+	margin: 0;
+}
+.category-list li:hover {
+	background: #313030;
+	color: #fff;
+}
+.active-sort {
+	background: #313030;
+	color: #fff;
+}
+#add-cate {
+	width: 29px;
+	height: 29px;
+	background: url(../img/add.png);
+	cursor: pointer;
+	margin: 30px auto;
+}
+#del-cate {
+	width: 46px;
+	height: 46px;
+	background: url(../img/del.png);
+	cursor: pointer;
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+}
+
+/* note-list
+ * 7.19
+ *-------------------*/
+.note-list-head{
+	color: #c5c1c1;
+	overflow: hidden;
+	height: 200px;
+	line-height: 200px;
+}
+.note-list-head h2 {
+	float: left;
+	font-size: 1.8em;
+	margin-left: 20px;
+}
+#add-note {
+	width: 80px;
+	line-height: 30px;
+	border-radius: 4px;
+	font-family: "微软雅黑";
+	color: #f6d3c8;
+	padding-left: 33px;
+	background: url(../img/leaf.png) 10px center no-repeat;
+	background-color: #da3610;
+	cursor: pointer;
+	float: right;
+	margin-top: 110px;
+	margin-right: 15px;
+}
+#add-note:hover {
+	color: #fff;
+}
+.note-list ul {
+	margin: 0 10px;
+	list-style: none;
+	padding: 0;
+}
+.note-list li {
+	background: #f5f5f5;
+	margin-bottom: 10px;
+	padding: 8px;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 2px solid #f5f5f5;
+	list-style: none;
+}
+.note-list li:hover {
+	background: #fff;
+	border: 2px solid #9fd1ed;
+}
+li.active-note {
+	background: #fff;
+	border: 2px solid #9fd1ed;
+}
+
+.note-list li p {
+	line-height: 1.7;
+	margin-top: 5px;
+	margin-bottom: 0;
+	font-size: 14px;
+}
+.note-list li h3 {
+	margin: 0 0 10px;
+}
+.note-list li h3 p {
+	font-size: 17px;
+	line-height: 1.0;
+}
+.note-list li li {
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+.note-list li li:hover{
+	border: none;
+	background: #fff;
+}
+.note-list li ul li {
+	list-style: disc;
+	margin-left: 20px;
+}
+.note-list li ol li{
+	list-style: decimal;
+}
+.note-list pre {
+	background: #f5f5f5;
+	padding: 10px;
+	border-radius: 5px;
+}
+.note-list code {
+	font-family: Arial,sans-serif;
+	color: #F85F7C;
+	line-height: 1.2;
+}
+.note-list h1,h2,h4,h5,h6{
+	font-size: 16px;
+}
+
+.nav {
+	margin: 0 auto;
+	width: 180px;
+	height: 40px;
+	padding-top: 20px;
+	display: none;
+}
+.nav span {
+	display: inline-block;
+	width: 28px;
+	height: 20px;
+	color: #fff;
+	background-color: #da3610;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 3px;
+
+}
+.nav span~span {
+	margin-left: 10px;
+}
+/* content-area
+ * 7.19
+ *-------------------*/
+.content-area-head {
+	height: 200px;
+	background: #da3610;
+	color: #fff;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+#note-title {
+	font-family: "微软雅黑";
+	font-size: 1.8em;
+	line-height: 1.5;
+	text-align: left;
+	padding-left: 20px;
+	width: 100%;
+}
+#del-note {
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	background: url(../img/del2.png) center center no-repeat;
+	margin-left: 20px;
+	margin-right: 20px;
+	flex-grow: 0;
+}
+.note-content {
+	padding: 15px 15px 15px 20px;
+	font-size: 14px;
+	line-height: 1.8;
+}
+.note-content pre {
+	background: #f5f5f5;
+	padding: 10px;
+	border-radius: 5px;
+}
+.note-content code {
+	font-family: Arial,sans-serif;
+	color: #F85F7C;
+	line-height: 1.2;
+}
+/********* edit ************/
+#content-edit {
+	display: none;
+}
+#edit-title {
+	font-family: "微软雅黑";
+	font-size: 1.6em;
+	line-height: 1.4;
+	text-align: left;
+	margin-left: 20px;
+	padding-left: 15px;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	color: #fff;
+}
+/***** 改变placeholder默认颜色 ******/
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #F1D3BB;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #F1D3BB;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #F1D3BB;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #F1D3BB;
+}
+#edit-content {
+	margin: 0px auto;
+	padding: 15px;
+}
+#edit-content textarea {
+	display: block;
+	width: 100%;
+	height: 520px;
+	font-family: arial;
+	font-size: 14px;
+	line-height: 1.7;
+}
+
+#preview-note {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background: url(../img/preview-icon.png) center center no-repeat;
+	margin-left: 20px;
+	margin-right: 10px;
+	flex-grow: 0;
+}
+.finish-note {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background: url(../img/icon_check.png) center center no-repeat;
+	margin-right: 10px;
+	flex-grow: 0;
+}
+#cancel-note {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background: url(../img/icon_close.png) center center no-repeat;
+	margin-right: 20px;
+	flex-grow: 0;
+}
+
+
+#edit-note {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background: url(../img/edit.png) center center no-repeat;
+	background-size: cover;
+	margin-right: 10px;
+	flex-grow: 0;
+}
+/*********** preview ************/
+#content-preview {
+	display: none;
+}
+#preview-title {
+	font-family: "微软雅黑";
+	font-size: 1.8em;
+	line-height: 1.5;
+	text-align: left;
+	padding-left: 20px;
+	width: 100%;
+}
+
+/*
+ * mask
+ */
+#mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background: #000;
+	*opacity: 0.3; 
+	filter: Alpha(opacity=30);
+	background: rgba(0,0,0,.3);
+	display: none;
+}
+#prompt-box {
+	width: 360px;
+	height: 240px;
+	text-align: center;
+	background: #fff;
+	border-radius: 5px;
+	font-family: "微软雅黑";
+	position: absolute;
+}
+#prompt-box input[name="sort-name"] {
+	width: 200px;
+	line-height: 1.5;
+	padding-left: 5px;
+	margin-top: 50px;
+	margin-bottom: 25px;
+}
+#prompt-box span {
+	display: inline-block;
+	color: #f00;
+	font-size: 12px;
+	margin-left: 5px;
+	width: 50px;
+}
+#prompt-box input[type="button"] {
+	width: 60px;
+	height: 25px;
+	border: 0;
+	cursor: pointer;
+	border-radius: 3px;
+	font-size: .8em;
+}
+#determine {
+	margin-left: 30px;
+	background: #da3610;
+	color: #f6d3c8;
+}
+#determine:hover {
+	color: #fff;
+}
+#prompt-box-head{
+	width: 100%;
+	height: 35px;	
+	background-color: #da3610; 
+	border-radius: 5px 5px 0 0;
+}
+#close-prompt {
+	width: 25px;
+	height: 35px;
+	background: url(../img/del2.png) 50% 50% no-repeat;
+	background-size: 20px; 
+	float: right;
+	margin-right: 10px;	
+}
+
+/*********** markdown ***************/
+hr {
+	height: 1px;
+	border: none;
+	background: #ddd;
+}
